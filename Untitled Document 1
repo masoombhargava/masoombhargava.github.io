@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masoom Bhargava | Postdoctoral Researcher</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:    #110f1c; /* Deeper indigo */
+      --mid:    #5b5b7a;
+      --accent: #8b5cf6; /* Vibrant violet */
+      --accent-light: #d8b4fe;
+      --light:  #f8f9fa;
+      --white:  #ffffff;
+      --border: #e2e8f0;
+      --serif:  'EB Garamond', Georgia, serif;
+      --sans:   'DM Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { 
+        scroll-behavior: smooth; 
+        font-size: 16px; 
+    }
+
+    body {
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── NAVBAR ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26, 26, 46, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      height: 64px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    #top {
+      min-height: 100vh;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #top::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(139, 92, 246, 0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner { 
+        position: relative; 
+        max-width: 720px; 
+        z-index: 1;
+        animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar-wrap {
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 2rem;
+      border: 2px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .avatar-wrap svg { opacity: 0.5; }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(to right, #ffffff, var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-location {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .hero-links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .hero-links a:hover {
+      color: var(--ink);
+      background: var(--white);
+      border-color: var(--white);
+    }
+
+    /* ── SECTIONS ────────────────────────────────────────── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    section:nth-of-type(odd) { background: var(--white); }
+    section:nth-of-type(even) { background: var(--light); }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-sub {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+
+    p { 
+        margin-bottom: 1.5rem; 
+        font-size: 1.05rem; 
+        color: #4a4a5e; 
+        line-height: 1.8;
+    }
+
+    /* ── INTERESTS / PROJECTS ────────────────────────────── */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .interest-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .interest-card:hover {
+      box-shadow: 0 15px 40px rgba(26,26,46,0.08);
+      transform: translateY(-5px);
+      border-color: rgba(108,99,168,0.3);
+    }
+
+    .interest-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%) saturate(0.9);
+      transition: filter 0.5s ease;
+    }
+
+    .interest-card:hover .interest-card-img {
+      filter: grayscale(0%) saturate(1.1);
+    }
+
+    .interest-card-body {
+      padding: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .interest-card h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .interest-card p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── TIMELINE ────────────────────────────────────────── */
+    .timeline { margin-top: 2rem; }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .tl-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .tl-date {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding-top: 0.2rem;
+    }
+
+    .tl-content h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .tl-content .tl-inst {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .tl-content p {
+      font-size: 0.95rem;
+      color: #6a6a82;
+      margin: 0 0 0.5rem 0;
+    }
+
+    /* ── PUBLICATIONS ────────────────────────────────────── */
+    .pub-list { margin-top: 2rem; }
+
+    .pub-item {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+    
+    .pub-item:hover {
+        background: rgba(255,255,255,0.4);
+    }
+
+    .pub-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+
+    .pub-authors {
+      font-size: 0.95rem;
+      color: #6a6a82;
+      margin-bottom: 0.75rem;
+    }
+
+    .pub-authors strong { color: var(--ink); font-weight: 600; }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-journal {
+      font-size: 0.9rem;
+      color: var(--mid);
+      font-style: italic;
+    }
+
+    .pub-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      background: rgba(108,99,168,0.1);
+      color: var(--accent);
+    }
+
+    .pub-link {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.2s;
+    }
+
+    .pub-link:hover { color: var(--ink); }
+
+    /* ── TALKS ───────────────────────────────────────────── */
+    .talk-item {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 1.5rem;
+    }
+
+    .talk-item:last-child { border-bottom: 1px solid var(--border); }
+
+    .talk-date {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      padding-top: 0.15rem;
+    }
+
+    .talk-content h4 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .talk-content p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin: 0;
+    }
+
+    /* ── AWARDS ──────────────────────────────────────────── */
+    .award-item {
+      padding: 1.75rem;
+      border-left: 4px solid var(--accent);
+      margin-bottom: 1.5rem;
+      background: var(--white);
+      border-radius: 0 6px 6px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+
+    .award-item h4 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .award-item p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin: 0;
+    }
+
+    /* ── SKILLS ──────────────────────────────────────────── */
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-tag {
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--ink);
+      background: var(--white);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .skill-tag:hover {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(108,99,168,0.2);
+    }
+
+    /* ── CONTACTS ────────────────────────────────────────── */
+    #contacts {
+      background: var(--ink) !important;
+      color: var(--white);
+      text-align: center;
+      padding: 8rem 2rem;
+    }
+
+    #contacts h2 { color: var(--white); }
+    #contacts .section-sub { color: rgba(255,255,255,0.5); }
+
+    .contact-email {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: rgba(255,255,255,0.9);
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 0.2rem;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .contact-email:hover {
+      color: var(--white);
+      border-bottom-color: var(--white);
+    }
+
+    .contact-links {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .contact-links a:hover { color: var(--white); }
+
+    footer {
+      background: #0f0f1e;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── AI CHAT WIDGET ──────────────────────────────────── */
+    .ai-chat-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--accent), #0ea5e9);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 0.8rem 1.5rem;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ai-chat-toggle:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(139, 92, 246, 0.5);
+    }
+    .ai-chat-window {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      width: 350px;
+      height: 450px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+      overflow: hidden;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ai-chat-window.hidden {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+    .chat-header {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1rem;
+      font-weight: 600;
+      font-family: var(--sans);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .chat-close {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    .chat-close:hover { color: white; }
+    .chat-body {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: var(--light);
+    }
+    .chat-msg {
+      max-width: 85%;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .msg-bot {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      align-self: flex-start;
+      border-bottom-left-radius: 2px;
+    }
+    .msg-user {
+      background: var(--accent);
+      color: var(--white);
+      align-self: flex-end;
+      border-bottom-right-radius: 2px;
+    }
+    .chat-input-area {
+      display: flex;
+      padding: 1rem;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      gap: 0.5rem;
+    }
+    .chat-input-area input {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      outline: none;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+    }
+    .chat-input-area input:focus {
+      border-color: var(--accent);
+    }
+    .chat-input-area button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .chat-input-area button:hover {
+      background: var(--ink);
+    }
+    .typing-indicator {
+      font-size: 0.8rem;
+      color: var(--mid);
+      align-self: flex-start;
+      display: none;
+      font-style: italic;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      
+      nav { justify-content: center; }
+
+      .tl-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 2rem 0;
+      }
+
+      .talk-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .tl-date, .talk-date {
+        font-size: 0.85rem;
+        padding-bottom: 0.5rem;
+      }
+      
+      section { padding: 4rem 1.5rem; }
+
+      .ai-chat-window {
+        width: 90%;
+        right: 5%;
+        bottom: 85px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#top">Masoom Bhargava</a>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#storyline">Storyline</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#contacts">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="top">
+  <div class="hero-inner">
+    <div class="avatar-wrap">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" alt="Masoom Bhargava Profile Image" style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <h1 class="hero-name">Masoom Bhargava</h1>
+    <p class="hero-title">Postdoctoral Researcher · Applied Mechanics &amp; Biomedical Engineering</p>
+    <p class="hero-location">IIT Madras, Tamil Nadu, India</p>
+    <div class="hero-links">
+      <a href="mailto:masoom.bhargava.13@gmail.com">Email Me</a>
+      <a href="https://scholar.google.com/citations?user=1IH5qGcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://linkedin.com/in/masoom-bhargava" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research">
+  <div class="section-inner">
+    <h2>Research Interests</h2>
+    <p class="section-sub">What drives my work</p>
+
+    <p>My research focuses on mathematical and data-informed modeling to investigate complex dynamics in biological systems. I develop models grounded in nonlinear dynamics and use bifurcation theory to analyze tipping points and critical transitions in nonlinear, stochastic, and multi-scale living systems.</p>
+    <p>I am particularly interested in integrating experimental and observational data to inform model structure and parameterization. My work spans spatiotemporal dynamics in biological and ecological systems, infectious disease spread, and tumor growth, with emphasis on how key parameters drive the emergence of complex biological patterns.</p>
+
+    <div class="interests-grid">
+      <div class="interest-card">
+        <img class="interest-card-img" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80" alt="Fractal rendering representing nonlinear dynamics">
+        <div class="interest-card-body">
+          <h3>Nonlinear Dynamics</h3>
+          <p>Analysis of phase-space trajectories, bifurcation theory, limit cycles, and critical transitions in chaotic dynamical systems.</p>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <img class="interest-card-img" src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=600&q=80" alt="Pathogen rendering representing mathematical biology">
+        <div class="interest-card-body">
+          <h3>Mathematical Biology</h3>
+          <p>Formulating mechanistic ODE/PDE models to evaluate tumor-immune interactions, chemo-immunotherapy efficacy, and epidemiological dynamics.</p>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <img class="interest-card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Stochastic data plot representing random walks and noise">
+        <div class="interest-card-body">
+          <h3>Periodic & Stochastic Systems</h3>
+          <p>Modeling environmental stochasticity via Itô and Stratonovich SDEs, analyzing random fluctuations, and assessing the impact of seasonal periodic forcing.</p>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <img class="interest-card-img" src="https://images.unsplash.com/photo-1526315572230-050ee6f1cf1d?w=600&q=80" alt="Zebra stripes representing biological Turing patterns">
+        <div class="interest-card-body">
+          <h3>Spatiotemporal Patterns</h3>
+          <p>Investigating Turing instabilities and reaction-diffusion systems that drive the formation of macroscopic biological phenomena, such as animal coat patterns.</p>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <img class="interest-card-img" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&q=80" alt="Silhouettes of people representing social networks">
+        <div class="interest-card-body">
+          <h3>Network Science</h3>
+          <p>Analyzing complex topologies to model human connectivity, sociological interactions, and the dynamic spread of news and information across social networks.</p>
+        </div>
+      </div>
+      
+      <div class="interest-card">
+        <img class="interest-card-img" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=80" alt="Data heatmaps representing machine learning">
+        <div class="interest-card-body">
+          <h3>ML & DL Techniques</h3>
+          <p>Applying Physics-Informed Neural Networks (PINNs) and data-driven parameter inference to complement deterministic mathematical modeling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORYLINE -->
+<section id="storyline">
+  <div class="section-inner">
+    <h2>Storyline</h2>
+    <p class="section-sub">Education &amp; Academic Positions</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Jan 2026 – Present</div>
+        <div class="tl-content">
+          <h3>Postdoctoral Researcher</h3>
+          <p class="tl-inst">Department of Applied Mechanics and Biomedical Engineering, IIT Madras, India</p>
+          <p>Supervisor: <em>to be added</em></p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">Oct 2025</div>
+        <div class="tl-content">
+          <h3>Ph.D. in Mathematics</h3>
+          <p class="tl-inst">Birla Institute of Technology and Science, Pilani, Rajasthan, India</p>
+          <p>Thesis: <em>Mathematical Models in Ecology with Trade-off Dynamics</em></p>
+          <p>Supervisor: <em>Prof. Balram Dubey</em></p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2018</div>
+        <div class="tl-content">
+          <h3>M.Sc. in Mathematics</h3>
+          <p class="tl-inst">Hindu College, University of Delhi, Delhi, India</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2016</div>
+        <div class="tl-content">
+          <h3>B.Sc. (H) in Mathematics</h3>
+          <p class="tl-inst">Gargi College, University of Delhi, Delhi, India</p>
+          <p>Subsidiary: Operational Research</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <h2>Publications</h2>
+    <p class="section-sub">Peer-reviewed Research</p>
+
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-title">Dynamics in a phytoplankton-krill-whale dynamic model with a Holling Type I functional response and constant yield harvesting</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey, J. Huang, M. Lu, X. Wang, X. Wang</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Ecological Complexity, 65, 101165 (2026)</span>
+          <span class="pub-badge">SCI-Q2 · IF 3.4</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.ecocom.2026.101165" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Spatiotemporal dynamics and bifurcation analysis on network and non-network environments of a dangerous prey and predator model</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Mathematics and Computers in Simulation, 244, 135–161 (2026)</span>
+          <span class="pub-badge">SCI-Q1 · IF 4.4</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.matcom.2025.12.012" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Exploring Turing Pattern Formation in a Seasonally Forced Predator-Prey Model Incorporating Fear Effects and Prey Refuge</div>
+        <div class="pub-authors">A. Singh, <strong>M. Bhargava</strong>, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Nonlinear Dynamics, 113, 30211–30239 (2025)</span>
+          <span class="pub-badge">SCI-Q1 · IF 6</span>
+          <a class="pub-link" href="https://doi.org/10.1007/s11071-025-11643-w" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Bifurcation Analysis and Turing Pattern Formation on Multiplex Networks of Ecological Model with Trade-Off Dynamics</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">The European Physical Journal Plus, 140, 1001 (2025)</span>
+          <span class="pub-badge">SCI-Q2 · IF 2.9</span>
+          <a class="pub-link" href="https://doi.org/10.1140/epjp/s13360-025-06951-4" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Impact of Chemo-Immunotherapy on Tumor-Immune Interactions: A Non-Autonomous Model of Tumor Necrosis Factor and T Cell Dynamics</div>
+        <div class="pub-authors">A. Kumar, <strong>M. Bhargava</strong>, U. S. Dubey, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Computers in Biology and Medicine, 197(A):110883 (2025)</span>
+          <span class="pub-badge">SCI-Q1 · IF 6.3</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.compbiomed.2025.110883" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Exploration of Prey-Taxis and Fear-induced Turing Patterns in Ecological Networks</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey, R. K. Upadhyay</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Nonlinear Dynamics, 113, 14071–14101 (2025)</span>
+          <span class="pub-badge">SCI-Q1 · IF 6</span>
+          <a class="pub-link" href="https://doi.org/10.1007/s11071-025-11075-6" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Trade-off and chaotic dynamics in two prey one-predator model with refuge, environmental noise and seasonal effects</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Mathematics and Computers in Simulation, 226: 218–245 (2024)</span>
+          <span class="pub-badge">SCI-Q1 · IF 4.4</span>
+          <a class="pub-link" href="https://doi.org/10.1016/j.matcom.2024.07.011" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Spatiotemporal and trade-off dynamics in prey-predator model with domed functional response and fear effect</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, Anshu, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">International Journal of Bifurcation and Chaos, 34(5): 2450061 (2024)</span>
+          <span class="pub-badge">SCI-Q1 · IF 2.3</span>
+          <a class="pub-link" href="https://doi.org/10.1142/S0218127424500615" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Trade-off dynamics and chaotic behavior in non-autonomous prey-predator model with group defense</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Nonlinear Dynamics, 111, 22727–22761 (2023)</span>
+          <span class="pub-badge">SCI-Q1 · IF 6</span>
+          <a class="pub-link" href="https://doi.org/10.1007/s11071-023-09019-z" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Trade-off and chaotic dynamics of prey-predator system with two discrete delays</div>
+        <div class="pub-authors"><strong>M. Bhargava</strong>, Sajan, B. Dubey</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Chaos: An Interdisciplinary Journal of Nonlinear Science, 33(5): 053120 (2023)</span>
+          <span class="pub-badge">SCI-Q1 · IF 3.7</span>
+          <a class="pub-link" href="https://doi.org/10.1063/5.0144182" target="_blank">DOI &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TALKS -->
+<section id="talks">
+  <div class="section-inner">
+    <h2>Talks &amp; Presentations</h2>
+    <p class="section-sub">Conferences and Seminars</p>
+
+    <div class="pub-list">
+      <div class="talk-item">
+        <div class="talk-date">Jan 2025</div>
+        <div class="talk-content">
+          <h4>Contributed Talk</h4>
+          <p>16th Conference on Dynamical Systems Applied to Biology and Natural Sciences (DSABNS 2025) — Università degli Studi di Napoli Federico II, Naples, Italy</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Jan 2025</div>
+        <div class="talk-content">
+          <h4>Poster Presentation</h4>
+          <p>International School and Conference on Network Science (NetSciX 2025) — IIT Indore, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Jul 2024</div>
+        <div class="talk-content">
+          <h4>Contributed Talk</h4>
+          <p>2nd International Conference on Recent Advances in Applied Mathematics (RAAM 2024) — IIT (BHU) Varanasi, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Jun 2024</div>
+        <div class="talk-content">
+          <h4>Contributed Talk &amp; Best Paper Award</h4>
+          <p>National Conference on Modeling, Analysis &amp; Simulation (MAS 2024) — IIT (ISM) Dhanbad, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Feb 2024</div>
+        <div class="talk-content">
+          <h4>Contributed Talk (Online)</h4>
+          <p>2nd International Conference on Nonlinear Dynamics and Applications — Sikkim Manipal University, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Aug 2023</div>
+        <div class="talk-content">
+          <h4>Contributed Talk (Online)</h4>
+          <p>International Symposium on Mathematical Analysis of Fractals and Dynamical Systems — VIT Vellore, Tamil Nadu, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Jun 2023</div>
+        <div class="talk-content">
+          <h4>Contributed Talk</h4>
+          <p>International Conference on Differential Equations and Control Problems (ICDECP 2023) — IIT Mandi, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Mar 2022</div>
+        <div class="talk-content">
+          <h4>Contributed Talk (Online)</h4>
+          <p>ICAMMCS-2022 — BITS Pilani, Pilani Campus, India</p>
+        </div>
+      </div>
+
+      <div class="talk-item">
+        <div class="talk-date">Feb 2022</div>
+        <div class="talk-content">
+          <h4>Contributed Talk (Online)</h4>
+          <p>13th Conference on Dynamical Systems Applied to Biology and Natural Sciences (DSABNS 2022) — Basque Centre for Applied Mathematics (BCAM), Spain</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS & SKILLS -->
+<section id="awards">
+  <div class="section-inner">
+    <h2>Grants &amp; Awards</h2>
+    <p class="section-sub">Recognition and Funding</p>
+
+    <div class="award-item">
+      <h4>Anusandhan National Research Foundation (ANRF) International Travel Grant</h4>
+      <p>Awarded to attend the 16th Dynamical Systems Applied on Biology and Natural Sciences (DSABNS 2025), 20–24 January 2025, Naples, Italy.</p>
+    </div>
+
+    <div class="award-item">
+      <h4>Best Paper Presentation Award</h4>
+      <p>Awarded at the National Conference on Modeling, Analysis &amp; Simulation (MAS 2024), Department of Mathematics &amp; Computing, IIT (ISM) Dhanbad, Jharkhand, India.</p>
+    </div>
+
+    <h2 style="margin-top: 4rem;">Skills</h2>
+    <p class="section-sub">Tools &amp; Software</p>
+
+    <div class="skills-wrap">
+      <span class="skill-tag">MATLAB</span>
+      <span class="skill-tag">MatCont</span>
+      <span class="skill-tag">Mathematica</span>
+      <span class="skill-tag">Maple</span>
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">Gephi</span>
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:1.25rem;margin-bottom:0.5rem;font-weight:600;color:var(--ink);">Reviewer For</h3>
+    <div class="skills-wrap">
+      <span class="skill-tag">Scientific Reports (Nature Portfolio)</span>
+      <span class="skill-tag">International Journal of Bifurcation and Chaos (World Scientific)</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section id="contacts">
+  <div class="section-inner">
+    <h2>Get in Touch</h2>
+    <p class="section-sub">Collaborations &amp; Inquiries</p>
+    <a class="contact-email" href="mailto:masoom.bhargava.13@gmail.com">masoom.bhargava.13@gmail.com</a>
+    <div class="contact-links">
+      <a href="https://scholar.google.com/citations?user=1IH5qGcAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://linkedin.com/in/masoom-bhargava" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Masoom Bhargava &middot; IIT Madras</footer>
+
+<!-- AI CHAT WIDGET -->
+<button id="ai-chat-toggle" class="ai-chat-toggle">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+  Ask AI
+</button>
+
+<div id="ai-chat-window" class="ai-chat-window hidden">
+  <div class="chat-header">
+    Research Assistant AI
+    <button id="chat-close" class="chat-close">&times;</button>
+  </div>
+  <div class="chat-body" id="chat-body">
+    <div class="chat-msg msg-bot">Hello! I'm an AI assistant trained on Masoom Bhargava's research portfolio. Ask me about her work in mathematical biology, nonlinear dynamics, or ecology!</div>
+    <div id="typing-indicator" class="typing-indicator">AI is typing...</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chat-input" placeholder="Ask a question..." />
+    <button id="chat-send">Send</button>
+  </div>
+</div>
+
+<script>
+  // API Key relies on the environment executing the code
+  const apiKey = "";
+  
+  const toggleBtn = document.getElementById('ai-chat-toggle');
+  const closeBtn = document.getElementById('chat-close');
+  const chatWindow = document.getElementById('ai-chat-window');
+  const chatBody = document.getElementById('chat-body');
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  const typingIndicator = document.getElementById('typing-indicator');
+
+  // Toggle Chat Window
+  toggleBtn.addEventListener('click', () => chatWindow.classList.remove('hidden'));
+  closeBtn.addEventListener('click', () => chatWindow.classList.add('hidden'));
+
+  // Sleep helper for backoff
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  // Gemini API integration function
+  async function callGeminiAPI(userQuery, retries = 5) {
+    const systemPrompt = `You are a helpful AI assistant representing Masoom Bhargava, a Postdoctoral Researcher at IIT Madras. 
+    Her research focuses on mathematical biology, mathematical ecology, nonlinear dynamics, and spatiotemporal patterns. 
+    Answer questions politely and concisely based primarily on the context of an academic portfolio.`;
+
+    const payload = {
+      contents: [{ parts: [{ text: userQuery }] }],
+      systemInstruction: { parts: [{ text: systemPrompt }] }
+    };
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+    
+    let delay = 1000;
+    for (let i = 0; i < retries; i++) {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't formulate a response.";
+      } catch (error) {
+        if (i === retries - 1) return "Sorry, I am having trouble connecting to my knowledge base right now. Please try again later.";
+        await sleep(delay);
+        delay *= 2;
+      }
+    }
+  }
+
+  function appendMessage(text, sender) {
+    const msgDiv = document.createElement('div');
+    msgDiv.classList.add('chat-msg', sender === 'user' ? 'msg-user' : 'msg-bot');
+    
+    // Simple way to handle newlines in text
+    msgDiv.innerHTML = text.replace(/\n/g, '<br>');
+    
+    chatBody.insertBefore(msgDiv, typingIndicator);
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  async function handleSend() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    // Add user message
+    appendMessage(text, 'user');
+    chatInput.value = '';
+    
+    // Show typing
+    typingIndicator.style.display = 'block';
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // Call API
+    const responseText = await callGeminiAPI(text);
+
+    // Hide typing and show response
+    typingIndicator.style.display = 'none';
+    appendMessage(responseText, 'bot');
+  }
+
+  chatSend.addEventListener('click', handleSend);
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleSend();
+  });
+</script>
+</body>
+</html>
