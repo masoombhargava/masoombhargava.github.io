@@ -640,3 +640,35 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 #panel-talks       { background: linear-gradient(135deg, rgba(76,140,90,.15), transparent 65%); }
 #panel-teaching    { background: linear-gradient(135deg, rgba(150,90,160,.15), transparent 65%); }
 #panel-contact     { background: radial-gradient(70% 60% at 50% 38%, rgba(47,75,124,.15), transparent 70%); }
+
+/* colourful research cards */
+.rgrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:1.4rem;
+  margin-top:.5rem;
+}
+.rcard{
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--surface-2);
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.rcard:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(21,23,30,.14); }
+.rcard-top{
+  height:92px;
+  display:grid; place-items:center;
+  background:linear-gradient(135deg, var(--c1), var(--c2));
+  color:#fff; position:relative;
+}
+.rcard-top::after{
+  content:""; position:absolute; inset:0;
+  background-image:radial-gradient(rgba(255,255,255,.28) 1px, transparent 1px);
+  background-size:14px 14px; opacity:.55;
+}
+.rcard-ico{ font-size:2.1rem; position:relative; z-index:1; line-height:1; }
+.rcard-body{ padding:1.15rem 1.25rem 1.4rem; }
+.rcard-body h3{ font-family:var(--serif); font-size:1.12rem; font-weight:600; margin-bottom:.55rem; line-height:1.25; }
+.rcard-body p{ font-size:.92rem; color:var(--muted); line-height:1.6; margin-bottom:.5rem; }
+.rkeys{ font-family:var(--mono); font-size:.74rem !important; color:var(--faint) !important; }
