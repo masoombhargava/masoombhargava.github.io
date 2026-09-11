@@ -672,3 +672,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .rcard-body h3{ font-family:var(--serif); font-size:1.12rem; font-weight:600; margin-bottom:.55rem; line-height:1.25; }
 .rcard-body p{ font-size:.92rem; color:var(--muted); line-height:1.6; margin-bottom:.5rem; }
 .rkeys{ font-family:var(--mono); font-size:.74rem !important; color:var(--faint) !important; }
+
+#panel-home{
+  background:
+    radial-gradient(55% 50% at 78% 22%, rgba(47,75,124,.20), transparent 70%),
+    radial-gradient(50% 55% at 12% 78%, rgba(42,127,122,.16), transparent 70%),
+    radial-gradient(60% 60% at 45% 50%, rgba(214,128,58,.06), transparent 75%);
+}
+.home-photo{
+  width:132px; height:132px;   /* ← change both numbers to resize */
+  ...
+}
+@media (max-width:900px){ .home-photo{ width:104px; height:104px; } }  /* ← phone size */
