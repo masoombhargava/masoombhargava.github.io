@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Masoom Bhargava — Mathematical modeler of complex biological systems</title>
+<meta name="description" content="Masoom Bhargava is a Specially Appointed Assistant Professor at WPI-PRIME, The University of Osaka. Research in nonlinear dynamics, bifurcation theory, pattern formation, and mathematical biology." />
+<meta name="author" content="Masoom Bhargava" />
+<meta name="keywords" content="Masoom Bhargava, nonlinear dynamics, bifurcation theory, mathematical biology, Turing patterns, reaction-diffusion, ecological modeling, network science, WPI-PRIME, University of Osaka" />
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Masoom Bhargava — Mathematical modeler of complex biological systems" />
+<meta property="og:description" content="Specially Appointed Assistant Professor at WPI-PRIME, The University of Osaka. Nonlinear dynamics, bifurcation theory, pattern formation, and mathematical biology." />
+<meta property="og:url" content="https://masoombhargava.github.io/" />
+<meta property="profile:first_name" content="Masoom" />
+<meta property="profile:last_name" content="Bhargava" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Masoom Bhargava" />
+<meta name="twitter:description" content="Nonlinear dynamics, bifurcation theory, and mathematical biology at WPI-PRIME, The University of Osaka." />
+
+<link rel="canonical" href="https://masoombhargava.github.io/" />
+
+<!-- Fonts: Spectral (serif, the thinking voice) + IBM Plex Sans (engineered UI) + IBM Plex Mono (real math notation only) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+
+<!-- Structured data for academic discoverability -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Masoom Bhargava",
+  "jobTitle": "Specially Appointed Assistant Professor",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "WPI-PRIME, The University of Osaka"
+  },
+  "email": "mailto:bhargava.masoom.prime@osaka-u.ac.jp",
+  "url": "https://masoombhargava.github.io/",
+  "sameAs": [
+    "https://scholar.google.com/citations?user=1IH5qGcAAAAJ&hl=en",
+    "https://www.linkedin.com/in/masoom-bhargava"
+  ],
+  "knowsAbout": [
+    "Nonlinear dynamics",
+    "Bifurcation theory",
+    "Mathematical biology",
+    "Pattern formation",
+    "Reaction-diffusion systems",
+    "Network science"
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- Faint phase-portrait flow field, drawn on the paper behind everything -->
+<canvas id="flow" aria-hidden="true"></canvas>
+
+<a class="skip-link" href="#panel-home">Skip to content</a>
+
+<!-- ============ DESKTOP SIDE RAIL ============ -->
+<header class="rail" role="banner">
+  <a class="brand" href="#home" data-target="home" aria-label="Masoom Bhargava — home">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 44 44" width="44" height="44" role="img">
+        <circle cx="22" cy="22" r="21" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+        <text x="22" y="28" text-anchor="middle" class="brand-initials">MB</text>
+      </svg>
+    </span>
+    <span class="brand-text">
+      <span class="brand-name">Masoom Bhargava</span>
+      <span class="brand-role">Mathematical modeling of living systems</span>
+    </span>
+  </a>
+
+  <nav class="rail-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#home"         data-target="home">Home</a></li>
+      <li><a href="#about"        data-target="about">About</a></li>
+      <li><a href="#research"     data-target="research">Research</a></li>
+      <li><a href="#publications" data-target="publications">Publications</a></li>
+      <li><a href="#talks"        data-target="talks">Talks &amp; training</a></li>
+      <li><a href="#teaching"     data-target="teaching">Teaching &amp; service</a></li>
+      <li><a href="#cv"           data-target="cv">CV</a></li>
+      <li><a href="#contact"      data-target="contact">Contact</a></li>
+    </ul>
+    <div class="rail-progress" aria-hidden="true"><span class="rail-progress-fill"></span></div>
+  </nav>
+
+  <div class="rail-foot">
+    <a href="https://scholar.google.com/citations?user=1IH5qGcAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+    <a href="https://www.linkedin.com/in/masoom-bhargava" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</header>
+
+<!-- ============ MOBILE TOP BAR ============ -->
+<div class="topbar">
+  <a class="topbar-brand" href="#home" data-target="home">Masoom Bhargava</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="menu-btn-lines" aria-hidden="true"></span>
+    <span class="sr-only">Open menu</span>
+  </button>
+</div>
+
+<!-- ============ MOBILE MENU OVERLAY ============ -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Sections" hidden>
+  <ul>
+    <li><a href="#home"         data-target="home">Home</a></li>
+    <li><a href="#about"        data-target="about">About</a></li>
+    <li><a href="#research"     data-target="research">Research</a></li>
+    <li><a href="#publications" data-target="publications">Publications</a></li>
+    <li><a href="#talks"        data-target="talks">Talks &amp; training</a></li>
+    <li><a href="#teaching"     data-target="teaching">Teaching &amp; service</a></li>
+    <li><a href="#cv"           data-target="cv">CV</a></li>
+    <li><a href="#contact"      data-target="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ============ STAGE ============ -->
+<main class="stage" id="stage">
+
+  <!-- ---------- HOME ---------- -->
+  <section class="panel panel--center is-active" id="panel-home" data-name="home" aria-label="Home" tabindex="-1">
+    <div class="panel-inner home">
+      <p class="home-kicker">Specially Appointed Assistant Professor</p>
+      <h1 class="home-name">Masoom Bhargava</h1>
+      <p class="home-affil">WPI-PRIME, The University of Osaka — Osaka, Japan</p>
+      <p class="home-lede">
+        I build mathematical and data-informed models to understand how complex
+        behaviour emerges in living systems — using nonlinear dynamics and
+        bifurcation theory to trace the tipping points and critical transitions
+        that shape ecology, disease, and tumour growth.
+      </p>
+      <div class="home-actions">
+        <a class="btn btn-primary" href="mailto:bhargava.masoom.prime@osaka-u.ac.jp">Email me</a>
+        <a class="btn" href="assets/Masoom_Bhargava_CV.pdf" download>Download CV (PDF)</a>
+        <a class="btn btn-ghost" href="#research" data-target="research">See the research</a>
+      </div>
+      <p class="home-caption" aria-hidden="true">
+        <span class="mono">ẋ = y,&nbsp;&nbsp;ẏ = −x − μy</span> — a damped oscillator settling to equilibrium, sketched live behind this page.
+      </p>
+    </div>
+  </section>
+
+  <!-- ---------- ABOUT ---------- -->
+  <section class="panel" id="panel-about" data-name="about" aria-label="About" tabindex="-1">
+    <div class="panel-inner">
+      <header class="panel-head">
+        <h2>About</h2>
+        <p class="panel-sub">The questions I work on, and the path that led here.</p>
+      </header>
+
+      <div class="prose">
+        <p>
+          My research focuses on mathematical and data-informed modeling to
+          investigate complex dynamics in biological systems. I develop models
+          grounded in nonlinear dynamics and use bifurcation theory to analyse
+          tipping points and critical transitions in nonlinear, stochastic, and
+          multi-scale living systems.
+        </p>
+        <p>
+          I am especially interested in integrating experimental and
+          observational data to inform model structure and parameterization. My
+          work spans spatiotemporal dynamics in biological and ecological
+          systems, infectious-disease modeling, and tumour growth, with an
+          emphasis on how a handful of key parameters drive the emergence of
+          complex biological patterns.
+        </p>
+        <p>
+          The larger aim is to uncover the mechanisms behind critical
+          transitions across scales — from ecological networks to physiological
+          processes. By pairing rigorous modeling with data-driven methods, I
+          look for the core features, the biological switches and oscillators,
+          that govern a system's resilience and progression, so that models can
+          offer genuine predictive insight rather than description alone.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-col">
+          <h3 class="col-title">Education</h3>
+          <ol class="timeline">
+            <li>
+              <span class="tl-when">Oct 2025</span>
+              <div class="tl-what">
+                <strong>Ph.D. in Mathematics</strong>
+                <span>Birla Institute of Technology and Science (BITS), Pilani, India</span>
+                <span class="tl-note">Thesis: <em>Mathematical Models in Ecology with Trade-off Dynamics</em> · Supervised by Prof. Balram Dubey</span>
+              </div>
+            </li>
+            <li>
+              <span class="tl-when">2018</span>
+              <div class="tl-what">
+                <strong>M.Sc. in Mathematics</strong>
+                <span>Hindu College, University of Delhi, India</span>
+              </div>
+            </li>
+            <li>
+              <span class="tl-when">2016</span>
+              <div class="tl-what">
+                <strong>B.Sc. (Hons.) in Mathematics</strong>
+                <span>Gargi College, University of Delhi, India</span>
+                <span class="tl-note">Subsidiary subject: Operational Research</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="about-col">
+          <h3 class="col-title">Appointments</h3>
+          <ol class="timeline">
+            <li>
+              <span class="tl-when">Sep 2026 — present</span>
+              <div class="tl-what">
+                <strong>Specially Appointed Assistant Professor</strong>
+                <span>WPI-PRIME, The University of Osaka, Japan</span>
+              </div>
+            </li>
+            <li>
+              <span class="tl-when">Jan — Aug 2026</span>
+              <div class="tl-what">
+                <strong>Postdoctoral Researcher</strong>
+                <span>Applied Mechanics &amp; Biomedical Engineering, IIT Madras, India</span>
+              </div>
+            </li>
+          </ol>
+
+          <h3 class="col-title col-title--spaced">Honours</h3>
+          <ul class="plain-list">
+            <li>
+              <strong>ANRF International Travel Grant</strong> (2025)
+              <span>Anusandhan National Research Foundation, to attend DSABNS 2025 in Naples, Italy.</span>
+            </li>
+            <li>
+              <strong>Best Paper Presentation Award</strong> (2024)
+              <span>National Conference on Modeling, Analysis &amp; Simulation (MAS 2024), IIT (ISM) Dhanbad.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- RESEARCH ---------- -->
+  <section class="panel" id="panel-research" data-name="research" aria-label="Research" tabindex="-1">
+    <div class="panel-inner">
+      <header class="panel-head">
+        <h2>Research</h2>
+        <p class="panel-sub">Six threads that run through the work. Open one to see how it connects.</p>
+      </header>
+
+      <ul class="areas" id="areas">
+        <li class="area">
+          <button class="area-btn" aria-expanded="false">
+            <span class="area-name">Nonlinear dynamics &amp; bifurcation theory</span>
+            <span class="area-icon" aria-hidden="true"></span>
+          </button>
+          <div class="area-body">
+            <p>Locating the parameter thresholds where a system's behaviour changes
+              qualitatively — Hopf and saddle-node bifurcations, limit cycles,
+              chaos, and the early-warning signals that precede a critical
+              transition.</p>
+            <p class="area-keys">stability analysis · tipping points · chaos · delays</p>
+          </div>
+        </li>
+
+        <li class="area">
+          <button class="area-btn" aria-expanded="false">
+            <span class="area-name">Pattern formation &amp; spatiotemporal dynamics</span>
+            <span class="area-icon" aria-hidden="true"></span>
+          </button>
+          <div class="area-body">
+            <p>How macroscopic structure arises in space and time. I study
+              reaction–diffusion systems and Turing instabilities, and how
+              seasonal forcing and movement (taxis) reshape the patterns that
+              form.</p>
+            <p class="area-keys">Turing patterns · reaction–diffusion · prey-taxis · seasonal forcing</p>
+          </div>
+        </li>
+
+        <li class="area">
+          <button class="area-btn" aria-expanded="false">
+            <span class="area-name">Mathematical biology</span>
+            <span class="area-icon" aria-hidden="true"></span>
+          </button>
+          <div class="area-body">
+            <p>Mechanistic ODE/PDE models of biological processes — tumour–immune
+              interactions and chemo-immunotherapy, and the spread of infectious
+              disease — built to connect model parameters to observable outcomes.</p>
+            <p class="area-keys">tumour–immune dynamics · chemo-immunotherapy · disease spread</p>
+          </div>
+        </li>
+
+        <li class="area">
+          <button class="area-btn" aria-expanded="false">
+            <span class="area-name">Ecological modeling &amp; trade-off dynamics</span>
+            <span class="area-icon" aria-hidden="true"></span>
+          </button>
+          <div class="area-body">
+            <p>Prey–predator systems where survival strategies carry a cost:
+              refuge, fear effects, group defence, and harvesting. Small changes
+              in these trade-offs can push a community between stability and
+              collapse.</p>
+            <p class="area-keys">prey–predator · refuge &amp; fear effects · group defence · harvesting</p>
+          </div>
+        </li>
+
+        <li class="area">
+          <button class="area-btn" aria-expanded="false">
+            <span class="area-name">Dynamics on networks</span>
+            <span class="area-icon" aria-hidden="true"></span>
+          </button>
+          <div class="area-body">
+            <p>Moving models off the continuous plane and onto networks — including
+              multiplex networks — to ask how topology governs pattern formation
+              and the spread of activity across coupled populations.</p>
+            <p class="area-keys">ecological networks · multiplex networks · network Turing patterns</p>
+          </div>
+        </li>
+
+        <li class="area">
+          <button class="area-btn" aria-expanded="false">
+            <span class="area-name">Stochastic &amp; multi-scale systems</span>
+            <span class="area-icon" aria-hidden="true"></span>
+          </button>
+          <div class="area-body">
+            <p>Bringing noise and randomness into otherwise deterministic models,
+              to test how environmental stochasticity and periodic forcing change
+              stability, persistence, and the onset of chaos.</p>
+            <p class="area-keys">environmental noise · random fluctuations · periodic forcing</p>
+          </div>
+        </li>
+      </ul>
+
+      <p class="research-foot">
+        The publications behind these threads are collected under
+        <a href="#publications" data-target="publications">Publications</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ---------- PUBLICATIONS ---------- -->
+  <section class="panel" id="panel-publications" data-name="publications" aria-label="Publications" tabindex="-1">
+    <div class="panel-inner">
+      <header class="panel-head">
+        <h2>Publications</h2>
+        <p class="panel-sub">Eleven peer-reviewed papers. Filter by year, or open one for the full author list and link.</p>
+      </header>
+
+      <div class="pub-filters" role="group" aria-label="Filter publications by year">
+        <button class="chip is-on" data-year="all">All</button>
+        <button class="chip" data-year="2026">2026</button>
+        <button class="chip" data-year="2025">2025</button>
+        <button class="chip" data-year="2024">2024</button>
+        <button class="chip" data-year="2023">2023</button>
+      </div>
+
+      <ul class="pubs" id="pubs">
+        <!-- 2026 -->
+        <li class="pub" data-year="2026">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Pattern formation in a predator–prey model on network and non-network environments</span>
+            <span class="pub-tag">2026</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors">M. Haque, J. Chen, T. Bi, H. Chen, J. Chen, Y. Wang, <strong>M. Bhargava</strong>, B. Dubey, A. Chatterjee</p>
+            <p class="pub-venue">Chaos, Solitons &amp; Fractals <em>209(2)</em>, 118486 <span class="pub-badge">SCI Q1 · IF 5.6</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.chaos.2026.118486" target="_blank" rel="noopener">doi.org/10.1016/j.chaos.2026.118486</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2026">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Dynamics in a phytoplankton–krill–whale model with a Holling Type I functional response and constant yield harvesting</span>
+            <span class="pub-tag">2026</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey, J. Huang, M. Lu, X. Wang, X. Wang</p>
+            <p class="pub-venue">Ecological Complexity <em>65</em>, 101165 <span class="pub-badge">SCI Q2 · IF 3.4</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.ecocom.2026.101165" target="_blank" rel="noopener">doi.org/10.1016/j.ecocom.2026.101165</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2026">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Spatiotemporal dynamics and bifurcation analysis on network and non-network environments of a dangerous prey–predator model</span>
+            <span class="pub-tag">2026</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</p>
+            <p class="pub-venue">Mathematics and Computers in Simulation <em>244</em>, 135–161 <span class="pub-badge">SCI Q1 · IF 4.4</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.matcom.2025.12.012" target="_blank" rel="noopener">doi.org/10.1016/j.matcom.2025.12.012</a>
+          </div>
+        </li>
+
+        <!-- 2025 -->
+        <li class="pub" data-year="2025">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Exploring Turing pattern formation in a seasonally forced predator–prey model incorporating fear effects and prey refuge</span>
+            <span class="pub-tag">2025</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors">A. Singh, <strong>M. Bhargava</strong>, B. Dubey</p>
+            <p class="pub-venue">Nonlinear Dynamics <em>113</em>, 30211–30239 <span class="pub-badge">SCI Q1 · IF 6.0</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1007/s11071-025-11643-w" target="_blank" rel="noopener">doi.org/10.1007/s11071-025-11643-w</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2025">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Bifurcation analysis and Turing pattern formation on multiplex networks of an ecological model with trade-off dynamics</span>
+            <span class="pub-tag">2025</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</p>
+            <p class="pub-venue">The European Physical Journal Plus <em>140</em>, 1001 <span class="pub-badge">SCI Q2 · IF 2.9</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1140/epjp/s13360-025-06951-4" target="_blank" rel="noopener">doi.org/10.1140/epjp/s13360-025-06951-4</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2025">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Impact of chemo-immunotherapy on tumour–immune interactions: a non-autonomous model of tumour necrosis factor and T-cell dynamics</span>
+            <span class="pub-tag">2025</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors">A. Kumar, <strong>M. Bhargava</strong>, U. S. Dubey, B. Dubey</p>
+            <p class="pub-venue">Computers in Biology and Medicine <em>197(A)</em>, 110883 <span class="pub-badge">SCI Q1 · IF 6.3</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.compbiomed.2025.110883" target="_blank" rel="noopener">doi.org/10.1016/j.compbiomed.2025.110883</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2025">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Exploration of prey-taxis and fear-induced Turing patterns in ecological networks</span>
+            <span class="pub-tag">2025</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey, R. K. Upadhyay</p>
+            <p class="pub-venue">Nonlinear Dynamics <em>113</em>, 14071–14101 <span class="pub-badge">SCI Q1 · IF 6.0</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1007/s11071-025-11075-6" target="_blank" rel="noopener">doi.org/10.1007/s11071-025-11075-6</a>
+          </div>
+        </li>
+
+        <!-- 2024 -->
+        <li class="pub" data-year="2024">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Trade-off and chaotic dynamics in a two prey–one predator model with refuge, environmental noise and seasonal effects</span>
+            <span class="pub-tag">2024</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</p>
+            <p class="pub-venue">Mathematics and Computers in Simulation <em>226</em>, 218–245 <span class="pub-badge">SCI Q1 · IF 4.4</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1016/j.matcom.2024.07.011" target="_blank" rel="noopener">doi.org/10.1016/j.matcom.2024.07.011</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2024">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Spatiotemporal and trade-off dynamics in a prey–predator model with domed functional response and fear effect</span>
+            <span class="pub-tag">2024</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, Anshu, B. Dubey</p>
+            <p class="pub-venue">International Journal of Bifurcation and Chaos <em>34(5)</em>, 2450061 <span class="pub-badge">SCI Q1 · IF 2.3</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1142/S0218127424500615" target="_blank" rel="noopener">doi.org/10.1142/S0218127424500615</a>
+          </div>
+        </li>
+
+        <!-- 2023 -->
+        <li class="pub" data-year="2023">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Trade-off dynamics and chaotic behaviour in a non-autonomous prey–predator model with group defence</span>
+            <span class="pub-tag">2023</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, B. Dubey</p>
+            <p class="pub-venue">Nonlinear Dynamics <em>111</em>, 22727–22761 <span class="pub-badge">SCI Q1 · IF 6.0</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1007/s11071-023-09019-z" target="_blank" rel="noopener">doi.org/10.1007/s11071-023-09019-z</a>
+          </div>
+        </li>
+        <li class="pub" data-year="2023">
+          <button class="pub-row" aria-expanded="false">
+            <span class="pub-title">Trade-off and chaotic dynamics of a prey–predator system with two discrete delays</span>
+            <span class="pub-tag">2023</span>
+          </button>
+          <div class="pub-detail">
+            <p class="pub-authors"><strong>M. Bhargava</strong>, Sajan, B. Dubey</p>
+            <p class="pub-venue">Chaos: An Interdisciplinary Journal of Nonlinear Science <em>33(5)</em>, 053120 <span class="pub-badge">SCI Q1 · IF 3.7</span></p>
+            <a class="pub-doi" href="https://doi.org/10.1063/5.0144182" target="_blank" rel="noopener">doi.org/10.1063/5.0144182</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ---------- TALKS & TRAINING ---------- -->
+  <section class="panel" id="panel-talks" data-name="talks" aria-label="Talks and training" tabindex="-1">
+    <div class="panel-inner">
+      <header class="panel-head">
+        <h2>Talks &amp; training</h2>
+        <p class="panel-sub">Conference presentations, and the schools and workshops that shaped the work.</p>
+      </header>
+
+      <div class="two-col">
+        <div>
+          <h3 class="col-title">Conference presentations</h3>
+          <ul class="event-list">
+            <li><span class="ev-when">Jan 2025</span><div><strong>Contributed talk</strong> — 16th DSABNS, Università degli Studi di Napoli Federico II, Naples, Italy</div></li>
+            <li><span class="ev-when">Jan 2025</span><div><strong>Poster</strong> — NetSciX 2025, IIT Indore, India</div></li>
+            <li><span class="ev-when">Jul 2024</span><div><strong>Contributed talk</strong> — RAAM 2024, IIT (BHU) Varanasi, India</div></li>
+            <li><span class="ev-when">Jun 2024</span><div><strong>Contributed talk</strong> (Best Paper Award) — MAS 2024, IIT (ISM) Dhanbad, India</div></li>
+            <li><span class="ev-when">Feb 2024</span><div><strong>Contributed talk</strong> — 2nd Intl. Conf. on Nonlinear Dynamics and Applications, Sikkim Manipal University (online)</div></li>
+            <li><span class="ev-when">Aug 2023</span><div><strong>Contributed talk</strong> — Intl. Symposium on Mathematical Analysis of Fractals and Dynamical Systems, VIT Vellore (online)</div></li>
+            <li><span class="ev-when">Jun 2023</span><div><strong>Contributed talk</strong> — ICDECP 2023, IIT Mandi, India</div></li>
+            <li><span class="ev-when">Mar 2022</span><div><strong>Contributed talk</strong> — ICAMMCS-2022, BITS Pilani (online)</div></li>
+            <li><span class="ev-when">Feb 2022</span><div><strong>Contributed talk</strong> — 13th DSABNS, Basque Centre for Applied Mathematics (BCAM), Spain (online)</div></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="col-title">Schools &amp; workshops</h3>
+          <ul class="event-list">
+            <li><span class="ev-when">May 2024</span><div>M3LS 2024 — ABV-IIITM, Gwalior, India</div></li>
+            <li><span class="ev-when">Mar 2024</span><div>Intl. FDP on Innovations in Mathematical Modelling — SRM IST, Tiruchirappalli (online)</div></li>
+            <li><span class="ev-when">Dec 2023</span><div>AESIM School on Mathematics for Health Sciences — BITS Pilani, India</div></li>
+            <li><span class="ev-when">Sep 2023</span><div>Intl. Seminar on Mathematical Modelling &amp; Turing's Pattern Formation — VIT Vellore, India</div></li>
+            <li><span class="ev-when">Jun 2023</span><div>National Workshop on Applied Mathematics and Computing — MITS, Gwalior, India</div></li>
+            <li><span class="ev-when">May 2023</span><div>Workshop on Fundamentals of Mathematical Biology — IIIT Allahabad (online)</div></li>
+            <li><span class="ev-when">Mar 2023</span><div>Workshop on Numerical Methods for Differential Equations — BITS Pilani, India</div></li>
+            <li><span class="ev-when">Dec 2022</span><div>Workshop on Nonlinear Phenomena in Mathematical Biology — ABV-IIITM, Gwalior, India</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- TEACHING & SERVICE ---------- -->
+  <section class="panel" id="panel-teaching" data-name="teaching" aria-label="Teaching and service" tabindex="-1">
+    <div class="panel-inner">
+      <header class="panel-head">
+        <h2>Teaching &amp; service</h2>
+        <p class="panel-sub">In the classroom, at the review desk, and with the tools of the trade.</p>
+      </header>
+
+      <div class="svc-grid">
+        <section class="svc">
+          <h3 class="col-title">Teaching</h3>
+          <ul class="plain-list">
+            <li>
+              <strong>Tutorial Instructor — Mathematics I (Calculus)</strong>
+              <span>Department of Mathematics, BITS Pilani · Sep 2022 – Feb 2023</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="svc">
+          <h3 class="col-title">Peer review</h3>
+          <ul class="plain-list tight">
+            <li>Scientific Reports — Nature Portfolio</li>
+            <li>International Journal of Bifurcation and Chaos — World Scientific</li>
+            <li>Modeling Earth Systems and Environment — Springer</li>
+            <li>Nonlinear Dynamics — Springer Nature</li>
+          </ul>
+        </section>
+
+        <section class="svc">
+          <h3 class="col-title">Tools</h3>
+          <div class="tagset">
+            <span class="tag">MATLAB</span>
+            <span class="tag">Python</span>
+            <span class="tag">Mathematica</span>
+            <span class="tag">Maple</span>
+            <span class="tag">MatCont</span>
+            <span class="tag">Gephi</span>
+          </div>
+          <p class="tools-note">Bifurcation analysis with MatCont; network visualization with Gephi. Languages: English and Hindi (both fluent).</p>
+        </section>
+
+        <section class="svc">
+          <h3 class="col-title">Earlier experience</h3>
+          <ul class="plain-list tight">
+            <li>
+              <strong>Project Data Investigator</strong> (2016)
+              <span>Communication &amp; research-collaboration networks among Delhi University teachers — Univ. of Delhi Innovation Project, Gargi College.</span>
+            </li>
+            <li>
+              <strong>Departmental Representative, Mathematics</strong> (2014–2015)
+              <span>Gargi College, University of Delhi.</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- CV ---------- -->
+  <section class="panel panel--center" id="panel-cv" data-name="cv" aria-label="Curriculum vitae" tabindex="-1">
+    <div class="panel-inner cv">
+      <header class="panel-head">
+        <h2>Curriculum vitae</h2>
+        <p class="panel-sub">The complete record — appointments, degrees, all eleven papers, talks, service, and skills — in one document.</p>
+      </header>
+
+      <div class="cv-stats">
+        <div class="stat"><span class="stat-n">11</span><span class="stat-l">peer-reviewed papers</span></div>
+        <div class="stat"><span class="stat-n">9</span><span class="stat-l">conference presentations</span></div>
+        <div class="stat"><span class="stat-n">4</span><span class="stat-l">journals reviewed for</span></div>
+      </div>
+
+      <a class="btn btn-primary btn-lg" href="assets/Masoom_Bhargava_CV.pdf" download>Download CV (PDF)</a>
+      <p class="cv-note">Opens the latest version. Prefer to read it here? Everything in the PDF also lives in the sections of this site.</p>
+    </div>
+  </section>
+
+  <!-- ---------- CONTACT ---------- -->
+  <section class="panel panel--center" id="panel-contact" data-name="contact" aria-label="Contact" tabindex="-1">
+    <div class="panel-inner contact">
+      <header class="panel-head">
+        <h2>Get in touch</h2>
+        <p class="panel-sub">Open to collaborations across nonlinear dynamics and mathematical biology.</p>
+      </header>
+
+      <a class="contact-email" href="mailto:bhargava.masoom.prime@osaka-u.ac.jp">bhargava.masoom.prime@osaka-u.ac.jp</a>
+
+      <div class="contact-links">
+        <a href="https://scholar.google.com/citations?user=1IH5qGcAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/masoom-bhargava" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/Masoom_Bhargava_CV.pdf" download>CV (PDF)</a>
+      </div>
+
+      <p class="contact-loc">WPI-PRIME, The University of Osaka, Osaka, Japan &middot; Indian national, from Alwar, Rajasthan.</p>
+
+      <details class="refs">
+        <summary>References</summary>
+        <ul>
+          <li><strong>Prof. Balram Dubey</strong> — Professor, Dept. of Mathematics, BITS Pilani. Ph.D. supervisor.</li>
+          <li><strong>Prof. Ranjit Kumar Upadhyay, FNASc</strong> — Dept. of Mathematics &amp; Computing, IIT (ISM) Dhanbad. Research collaborator.</li>
+          <li><strong>Dr. Anirudh Singh Rana</strong> — Associate Professor, Dept. of Mathematics, BITS Pilani. Doctoral advisory committee.</li>
+          <li><strong>Dr. Xiunan Wang</strong> — Assistant Professor, Dept. of Mathematics, University of Tennessee at Chattanooga, USA. Research collaborator.</li>
+        </ul>
+        <p class="refs-note">Full contact details available on request.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PAGER (prev / next / position) ============ -->
+<div class="pager" aria-hidden="false">
+  <button class="pager-btn" id="prevBtn" aria-label="Previous section">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <span class="pager-count" id="pagerCount" aria-live="polite">01 / 08</span>
+  <button class="pager-btn" id="nextBtn" aria-label="Next section">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
