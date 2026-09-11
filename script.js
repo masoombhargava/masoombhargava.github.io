@@ -303,7 +303,7 @@
         var alpha = Math.max(0, 0.35 * (1 - p.life / p.max));
 
         ctx.strokeStyle = "rgba(47, 75, 124," + alpha + ")";
-        ctx.lineWidth = 1.2;
+        ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.moveTo(toScreenX(p.px), toScreenY(p.py));
         ctx.lineTo(toScreenX(p.x), toScreenY(p.y));
