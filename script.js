@@ -300,10 +300,10 @@
         p.life++;
 
         var speed = Math.sqrt(ax * ax + ay * ay);
-        var alpha = Math.max(0, 0.16 * (1 - p.life / p.max));
+        var alpha = Math.max(0, 0.35 * (1 - p.life / p.max));
 
         ctx.strokeStyle = "rgba(47, 75, 124," + alpha + ")";
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 1.2;
         ctx.beginPath();
         ctx.moveTo(toScreenX(p.px), toScreenY(p.py));
         ctx.lineTo(toScreenX(p.x), toScreenY(p.y));
