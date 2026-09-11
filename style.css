@@ -629,7 +629,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   margin-bottom:1.5rem;
   display:block;
 }
-@media (max-width:900px){ .home-photo{ width:104px; height:104px; } }
+@media (max-width:900px){ .home-photo{ width:132px; height:132px; } }
 /* per-section colour washes */
 #panel-home        { background: radial-gradient(60% 55% at 72% 30%, rgba(47,75,124,.14), transparent 70%); }
 #panel-about       { background: linear-gradient(140deg, rgba(42,127,122,.14), rgba(47,75,124,.06) 60%, transparent); }
