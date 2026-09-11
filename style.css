@@ -618,3 +618,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   }
   #flow { display: none; }
 }
+/* profile photo on the homepage */
+.home-photo{
+  width:132px; height:132px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
+  outline:1px solid var(--line);
+  box-shadow:0 12px 30px rgba(21,23,30,.18);
+  margin-bottom:1.5rem;
+  display:block;
+}
+@media (max-width:900px){ .home-photo{ width:104px; height:104px; } }
+/* per-section colour washes */
+#panel-home        { background: radial-gradient(60% 55% at 72% 30%, rgba(47,75,124,.14), transparent 70%); }
+#panel-about       { background: linear-gradient(140deg, rgba(42,127,122,.14), rgba(47,75,124,.06) 60%, transparent); }
+#panel-research    { background:
+                       radial-gradient(45% 45% at 14% 18%, rgba(214,128,58,.18), transparent 60%),
+                       radial-gradient(52% 52% at 88% 82%, rgba(47,75,124,.18), transparent 60%); }
+#panel-publications{ background: linear-gradient(160deg, rgba(90,79,174,.12), rgba(47,75,124,.06) 70%, transparent); }
+#panel-talks       { background: linear-gradient(135deg, rgba(76,140,90,.15), transparent 65%); }
+#panel-teaching    { background: linear-gradient(135deg, rgba(150,90,160,.15), transparent 65%); }
+#panel-contact     { background: radial-gradient(70% 60% at 50% 38%, rgba(47,75,124,.15), transparent 70%); }
