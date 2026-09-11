@@ -683,4 +683,4 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   width:132px; height:132px;   /* ← change both numbers to resize */
   ...
 }
-@media (max-width:900px){ .home-photo{ width:104px; height:104px; } }  /* ← phone size */
+@media (max-width:900px){ .home-photo{ width:132px; height:132px; } }  /* ← phone size */
